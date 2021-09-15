@@ -1,0 +1,157 @@
+:root{
+    --background-color: #aaaaaa;
+    --accent-color: #00a870;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-heading h1{
+    font-size: 1.5em;
+}
+
+.heading-underline{
+    margin-top: 10px;
+    width: 50%;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.notes-app-screens{
+    display: flex;
+    gap: 50px;
+}
+
+.note-box{
+    border-radius: 10px;
+    background: #202020;
+    height: 400px;
+    width: 400px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#new-note{
+    overflow: hidden;
+}
+
+#all-notes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    overflow: auto;
+}
+
+.input-field-div{
+    height: 350px;
+}
+
+.input-textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    resize: none;
+    padding: 20px;
+    border-bottom: 2px solid #818181;
+    background: #202020;
+    color: #ffffff;
+}
+
+.input-textarea:focus{
+    outline: none;
+}
+
+.input-controls-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.controls-button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#font-color-picker{
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#font-size-input{
+    background: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+}
+
+#font-size-input:focus{
+    outline: none;
+}
+
+#add-note-button{
+    background: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+
+.note{
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--background-color);
+}
+
+.delete-button{
+    position: absolute;
+    font-size: 10px;
+    top: 8px;
+    right: 8px;
+    height: 20px;
+    width: 20px;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 5px;
+    background: #505050;
+    color: #ffffff;
+    cursor: pointer;
+}
