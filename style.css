@@ -112,7 +112,6 @@ body{
 }
 
 #font-size-input{
-    background: var(--background-color);
     border: none;
     border-radius: 4px;
     padding: 8px;
@@ -124,6 +123,14 @@ body{
 #font-size-input:focus{
     outline: none;
 }
+
+#font-family-input{
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    height: 30px;
+}
+
 
 #add-note-button{
     background: var(--accent-color);

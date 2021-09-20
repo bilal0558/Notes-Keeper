@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <title>Notes Keeper</title>
 </head>
+
 <body>
-    
+
     <div class="container">
         <div class="main-heading">
             <h1>Notes Keeper</h1>
@@ -18,12 +20,17 @@
             <div id="new-note" class="note-box">
                 <form action="" id="new-note-form" onSubmit="return addNewNote()">
                     <div class="input-field-div">
-                        <textarea name="" id="note-text" cols="30" rows="10" class="input-textarea" placeholder="Enter Your Notes Here" required></textarea>
+                        <textarea name="" id="note-text" cols="30" rows="10" class="input-textarea"
+                            placeholder="Enter Your Notes Here" required></textarea>
                     </div>
                     <div class="input-controls-div">
                         <div class="controls-button">
                             <input type="color" name="" id="font-color-picker" required>
                             <input type="text" id="font-size-input" placeholder="Font Size" required>
+                            <select name="" id="font-family-input" required>
+                                <option value="sans-serif">Sans Serif</option>
+                                <option value="serif">Serif</option>
+                            </select>
                         </div>
                         <div>
                             <input type="submit" value="Save" id="add-note-button">
@@ -38,4 +45,5 @@
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>

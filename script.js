@@ -2,6 +2,7 @@
 let noteTextField = document.getElementById("note-text");
 let fontColorPicker = document.getElementById("font-color-picker");
 let fontSizeInput = document.getElementById("font-size-input");
+let fontFamilyInput = document.getElementById("font-family-input");
 let allNotesDiv = document.getElementById("all-notes");
 
 //Initializing Note ID.
@@ -26,7 +27,7 @@ if(JSON.parse(localStorage.getItem("allNotes")==null)){
 else{
     allNotes = JSON.parse(localStorage.getItem("allNotes"));
     allNotes.forEach(function(note){
-        initialNotesPaint(note.id, note.text, note.color, note.size);
+        initialNotesPaint(note.id, note.text, note.color, note.size, note.family);
     })
 }
 
@@ -38,18 +39,20 @@ function addNewNote(){
     let noteText = noteTextField.value;
     let fontColor = fontColorPicker.value;
     let fontSize = fontSizeInput.value;
+    let fontFamily = fontFamilyInput.value;
     
-    createNewNote(noteText, fontColor, fontSize);
+    createNewNote(noteText, fontColor, fontSize, fontFamily);
     return false;
 }
 
 //function used for initial painting to the notes from the local storage when the app is loaded.
-function initialNotesPaint(id, text, color, size){
+function initialNotesPaint(id, text, color, size, family){
     let note = document.createElement("div");
     note.className = "note";
     note.id = id;
     note.style.color = color;
     note.style.fontSize = `${size}px`;
+    note.style.fontFamily = family;
     note.innerHTML = `
         ${text}
         <button class="delete-button" style="font-size : 10px;">X</button>
@@ -57,13 +60,14 @@ function initialNotesPaint(id, text, color, size){
     paintNote(note);
 }
 
-function createNewNote(text, color, size){
+function createNewNote(text, color, size, family){
     noteId++;
     let note = document.createElement("div");
     note.className = "note";
     note.id = noteId;
     note.style.color = color;
     note.style.fontSize = `${size}px`;
+    note.style.fontFamily = family;
     note.innerHTML = `
         ${text}
         <button class="delete-button" style="font-size : 10px;">X</button>
@@ -74,7 +78,8 @@ function createNewNote(text, color, size){
         id : noteId,
         text : text,
         color : color,
-        size : size
+        size : size,
+        family : family
     }
 
     allNotes.push(noteData);
